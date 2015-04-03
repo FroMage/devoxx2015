@@ -35,8 +35,10 @@ shared void run() {
     }else{
         conf = Config{port = 9001;};
     }
-    Application(`package fr.devoxx2015.controller`, conf).start();
+    value app = Application(`package fr.devoxx2015.controller`, conf).start();
     print("Started on port ``conf.port``");
+    // make sure the app is started
+    app.future.get();
     while(exists line = process.readLine()){
         print("Read ``line``");
         if(line == "stop"){

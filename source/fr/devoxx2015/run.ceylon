@@ -37,8 +37,11 @@ shared void run() {
     }
     Application(`package fr.devoxx2015.controller`, conf).start();
     print("Started on port ``conf.port``");
-    process.readLine();
-    print("Got something1");
-    process.readLine();
-    print("Got something2");
+    while(exists line = process.readLine()){
+        print("Read ``line``");
+        if(line == "stop"){
+            break;
+        }
+    }
+    print("Exiting");
 }

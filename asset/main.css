@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+}
+
+.action {
+    border: none;
+    background: none;
+    display: inline;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+div button {
+    margin-left: 0.5em;
+}
+
+ul {
+    text-align: left;
+    display: inline-block;
+    list-style-type: none;
+}
+
+form {
+    display: inline;
+}

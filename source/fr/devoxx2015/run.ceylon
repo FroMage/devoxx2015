@@ -26,8 +26,8 @@ shared void run() {
     Config conf;
     if(openshift.running){
         conf = Config{
-            hostName = openshift.ip; 
-            port = openshift.port;
+            hostName = openshift.ceylon.ip; 
+            port = openshift.ceylon.port;
             externalHostName = openshift.dns; 
             externalPort = 80;
             applicationPath = openshift.repository;

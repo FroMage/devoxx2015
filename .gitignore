@@ -1,3 +1,4 @@
 /modules
 .ceylon/config.old
 .exploded
+/classes/

@@ -1,0 +1,72 @@
+- Download Java 7 or 8
+  https://java.com/en/download/linux_manual.jsp
+- Download Eclipse
+  https://www.eclipse.org/downloads/
+- Download Ceylon IDE
+  http://ceylon-lang.org/documentation/1.1/ide/install/
+- Download CLI
+  http://ceylon-lang.org/download/
+- Download postgres
+  http://www.postgresql.org/download/
+
+- Create new project
+- Create run method
+
+- Add Maven repo
+- Import Cayla
+- Create first Hello World controller
+- Update run method to register controller
+
+- Add main.css
+- Add asset handler
+
+- Import postgres module
+- Create DB
+  sudo su - postgres
+  createuser -PSRD devoxx2015
+  createdb -O devoxx2015 -E utf8 devoxx2015
+- Add DB connection
+
+- Import cayla/hibernate
+- Write Todo model
+
+- Add index/add handlers
+
+- Sort todos by name
+
+- Add done/remove handlers
+
+- Add clear/remove-donne handlers
+
+- Support recursive tasks
+-- Add parent/children
+-- Import ceylon.interop.java module
+-- Click to view children
+-- Modify handlers to work on recursive tasks
+-- View handler hierarchy
+
+- Register on openshift online
+  https://www.openshift.com/app/account/new
+- Install RHC
+  gem install rhc
+  rhc setup
+-- Or Linux
+  apt-get install ruby-full
+  apt-get install rubygems
+
+
+- Install openshift CLI plugin
+  ceylon plugin install ceylon.openshift/1.1.1
+- Openshiftize app
+  ceylon openshift init your.module/1.0
+- Tell Openshift to use aether
+  touch .openshift/markers/enable_aether
+- Import openshift module
+-- setup DB
+-- setup Cayla
+
+- Push to github
+- Start Openshift VM
+  rhc create-app --from-code https://github.com/FroMage/devoxx2015.git devoxx20154 https://raw.github.com/ceylon/openshift-cartridge/master/metadata/manifest.yml postgresql-9.2
+- View online
+  http://devoxx20154-fromage.rhcloud.com

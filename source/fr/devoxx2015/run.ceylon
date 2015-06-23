@@ -15,7 +15,8 @@ shared void run() {
         if(openshift.postgres.running){
             String url = openshift.postgres.jdbcUrl;
             print("Connecting to postgres at ``url``");
-            setupDatabase(url, openshift.postgres.user, openshift.postgres.password, `package fr.devoxx2015.model`);
+            setupDatabase(url, openshift.postgres.user, openshift.postgres.password, 
+                `package fr.devoxx2015.model`);
         }else{
             print("Not setting up DB: none running yet (your app will not work)");
         }

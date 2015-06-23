@@ -1,3 +1,16 @@
+import fr.devoxx2015.controller {
+    AddHandler,
+    Asset,
+    DoneHandler,
+    AllDoneHandler,
+    ClearHandler,
+    RemoveDoneHandler,
+    DeleteHandler
+}
+import fr.devoxx2015.model {
+    Todo
+}
+
 import io.cayla.web.template {
     Template,
     HTML,
@@ -14,18 +27,6 @@ import io.cayla.web.template {
     H1,
     SPAN,
     DIV
-}
-import fr.devoxx2015.model {
-    Todo
-}
-import fr.devoxx2015.controller {
-    AddHandler,
-    DeleteHandler,
-    Asset,
-    DoneHandler,
-    ClearHandler,
-    AllDoneHandler,
-    RemoveDoneHandler
 }
 
 shared Template lister(List<Todo> list) {
@@ -45,7 +46,7 @@ shared Template lister(List<Todo> list) {
             },
             P {
                 "Add a todo: ",
-                FORM{
+                FORM {
                     action = AddHandler().string;
                     method = "POST";
                     INPUT {
@@ -68,7 +69,8 @@ shared Template lister(List<Todo> list) {
                     BUTTON {
                         "Mark all done"
                     }
-                },
+                }
+                ,
                 FORM {
                     action = RemoveDoneHandler().string;
                     method = "POST";
@@ -78,10 +80,10 @@ shared Template lister(List<Todo> list) {
                 }
             },
             UL {
-                for(mod in list.sort((Todo x, Todo y) => x.name.compare(y.name))) 
+                for(todo in list.sort((Todo x, Todo y) => x.name.compare(y.name))) 
                 LI {
                     FORM {
-                        action = DoneHandler(mod.id).string;
+                        action = DoneHandler(todo.id).string;
                         method = "POST";
                         BUTTON {
                             className = "action";
@@ -89,11 +91,11 @@ shared Template lister(List<Todo> list) {
                         }
                     },
                     SPAN {
-                        className = mod.done then "done" else "";
-                        mod.name
+                        className = todo.done then "done" else "";
+                        todo.name
                     },
                     FORM {
-                        action = DeleteHandler(mod.id).string;
+                        action = DeleteHandler(todo.id).string;
                         method = "POST";
                         BUTTON {
                             className = "action";

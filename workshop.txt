@@ -1,3 +1,5 @@
+This project at https://github.com/FroMage/devoxx2015
+
 - Download Java 7 or 8
   https://java.com/en/download/linux_manual.jsp
 - Download Eclipse
